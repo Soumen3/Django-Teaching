@@ -9,5 +9,24 @@
 {% block body %}
     <div class="container">
         <h1>This is my About page</h1>
+
+        <p>Name : {{name}}</p>
+        <p>Age: {{age}}</p>
+
+        {% if age > 20  %}
+            <p>Eligible</p>
+        {% else %}
+            <p>Not eligible</p>
+        {% endif %}
+
+        {% if Courses|length > 1 %}
+            <p>Courses: </p><ul>
+                {% for crs in Courses %}
+                    <li>{{crs}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Course: {{Courses.0}}</p>
+        {% endif %}
     </div>
 {% endblock body %}

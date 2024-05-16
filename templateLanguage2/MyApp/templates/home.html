@@ -3,10 +3,35 @@
 
 {% block body %}
     <div class="container">
-        <h1>This is my home page</h1>
-        <p>Name: {{name}}</p>
+        {% comment %} <h1>This is my home page</h1>
+        <p>Name: {{name | upper }}</p>
         <p>Age: {{age}}</p>
-        <p>Courser: {{Course}}</p> 
+        <p>Courser: 
+            {% for course in Courses %}
+                <li>{{course}}</li>
+            {% empty %}
+            <p>The list is empty</>
+            {% endfor %}
+        </p>   {% endcomment %}
+
+        {% comment %} {% for key, value in students.items %}
+            <h3>{{key}}:</h3> <br>
+            {% for key, value in value.items %}
+                <Li>{{key}}:{{value}}</Li>
+            {% endfor %}
+        {% endfor %}  {% endcomment %}
+
+        {% for std_key, std_value in students.items %}
+             <p>Name: {{std_value.name}}</p>
+             <p>Age: {{std_value.age}}</p>
+             <p>Courses: 
+                {% for crs in std_value.Courses %}
+                    <li>{{crs}}</li>
+                {% endfor %}
+             </p>
+        {% endfor %}
+
+
     </div>
 
     
