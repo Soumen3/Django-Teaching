@@ -25,3 +25,7 @@ def about(request):
         "Courses": ["bca"],
     }
     return render(request, 'about.html', context=context)
+
+
+def contact(request):
+    return render(request, 'contact.html')
