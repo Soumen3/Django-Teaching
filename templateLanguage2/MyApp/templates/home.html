@@ -21,7 +21,7 @@
             {% endfor %}
         {% endfor %}  {% endcomment %}
 
-        {% for std_key, std_value in students.items %}
+        {% comment %} {% for std_key, std_value in students.items %}
              <p>Name: {{std_value.name}}</p>
              <p>Age: {{std_value.age}}</p>
              <p>Courses: 
@@ -29,7 +29,34 @@
                     <li>{{crs}}</li>
                 {% endfor %}
              </p>
+        {% endfor %} {% endcomment %}
+
+
+        {% comment %} {{students}} {% endcomment %}
+
+        {% comment %} {% for std_key, std_value in students.items %}
+            <p>{{std_key}} :</p>
+            {% for key, value  in std_value.items %}
+                <p>{{key}} : {{value}}</p>
+            {% endfor %}
+        {% endfor %} {% endcomment %}
+
+        {% for std_key, std_value in students.items %}
+            <p>std_key : {{std_key}} </p>
+            <p>std_value :</p> 
+            <p> Name: {{std_value.name}}</p>
+            <p>Age: {{std_value.age}}</p>
+            <p>Courses  :
+                {% for course in std_value.Courses %}
+                    <li>{{course}}</li>
+                {% endfor %}    
+            </p>
+            <hr>
         {% endfor %}
+
+        
+
+
 
 
     </div>
