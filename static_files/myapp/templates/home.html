@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "css/home.css" %}">
+{% endblock css %}
+{% block body  %}
+	<p class="lorem">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eveniet illo in similique exercitationem aliquam non incidunt ut quod iusto vitae sed, perferendis impedit officiis inventore facere cumque corrupti quis delectus? Itaque nisi nihil eveniet et labore praesentium nesciunt natus soluta debitis! Labore reprehenderit odio quis cumque itaque tempore atque.
+	</p>
+	<img src="{% static "media/abc.png" %}" alt="" height="500" width="600">
+{% endblock body %}
+
+{% block js %}
+	<script src="{% static "js/home.js" %}"></script>
+{% endblock js %}

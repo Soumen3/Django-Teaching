@@ -7,5 +7,23 @@
     <div class="container">
         <h1>Home</h1>
         <p>Welcome to the home page</p>
+        <p class="text">Name: {{Name}}</p>
+        <p class="text">{{Age}}</p>
+
+
+        {{Course}}
+        <ul>
+            {% for cor in Course %}
+                <li>{{cor}}</li>
+            {% endfor %}
+        </ul>
+
+        {% if Age > 18  %}
+            <p>You are an adult</p>
+        {% else %}
+            <p>You are a minor</p>
+        {% endif %}
+
+
     </div>
 {% endblock body %}

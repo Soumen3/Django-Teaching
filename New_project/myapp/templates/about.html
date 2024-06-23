@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title  %}About{% endblock title  %}
+
+{% block body  %}
+	<p class="h2 text text-center">About</p>
+	<p class="text text-center">This is a simple web application built using Flask and Bootstrap.</p>
+	{{Students}}
+
+	{% for key, value in Students.items %}
+		<p class="text">Key: {{key}}</p>
+		<p class="text">value: 
+			{% for key, val in value.items %}
+				{{key}}: {{val}} <br>
+			{% endfor %}
+		</p>
+	{% endfor %}
+
+	{{Students.student2.Name}}
+	
+	<p class="h3 text text-center">User to server</p>
+	<form action="" method="post"> {% csrf_token %}
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name"> <br>
+		<label for="course">Course</label>
+		<input type="text" id="course" name="course"> <br>
+		<button type="submit">Submit</button>
+	</form>
+	
+	<p class="text">Name {{name}}</p>
+	<p class="text">Course {{course}}</p>
+{% endblock body  %}
