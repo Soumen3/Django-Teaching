@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Home</h1>
+	<form action="" method="post">
+		{% csrf_token %}
+		<label for="name">Name</label>
+		<input type="text" name="name" id="name">
+		<label for="age">Age</label>
+		<input type="number" name="age" id="age">
+		<label for="grade">Grade</label>
+		<input type="text" name="grade" id="grade">
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
